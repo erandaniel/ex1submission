@@ -297,7 +297,10 @@ char *RLEListExportToString(RLEList list, RLEListResult *result)
 
     if (!stringToExport)
     {
-        *result = RLE_LIST_OUT_OF_MEMORY;
+        if(result)
+        {
+            *result = RLE_LIST_ERROR;
+        }
         return NULL;
     }
 
